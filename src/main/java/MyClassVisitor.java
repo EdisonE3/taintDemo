@@ -13,13 +13,17 @@ public class MyClassVisitor extends ClassVisitor {
   }
 
   @Override
-  public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
-    return new MyMethodVisitor(super.visitMethod(access, name, MethodModify.modifyDesc(descriptor), signature, exceptions), name, indexMap);
+  public MethodVisitor visitMethod(int access, String name,
+                                   String descriptor, String signature, String[] exceptions) {
+    return new MyMethodVisitor(super.visitMethod(access, name, MethodModify.modifyDesc(descriptor),
+            signature, exceptions), name, indexMap);
   }
 
   @Override
-  public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
+  public FieldVisitor visitField(int access, String name,
+                                 String descriptor, String signature, Object value) {
     super.visitField(access, name, descriptor, signature, value);
-    return FieldModify.modifyField(cv, access, name, descriptor, signature, value);
+    return FieldModify.modifyField(cv, access, name,
+            descriptor, signature, value);
   }
 }

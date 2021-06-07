@@ -8,7 +8,6 @@ public class Example {
 
   int doMath(int in){
     int ret = in + val;
-
     return ret;
   }
 }
