@@ -15,7 +15,9 @@ public class CollectMethodVisitor extends MethodVisitor {
   }
 
   @Override
-  public void visitLocalVariable(String name, String descriptor, String signature, Label start, Label end, int index) {
+  public void visitLocalVariable(String name, String descriptor,
+                                 String signature, Label start, Label end, int index) {
+    System.out.println("d: " + descriptor + " s: " + signature);
     super.visitLocalVariable(name, descriptor, signature, start, end, index);
 
     if (!name.equals("this")){

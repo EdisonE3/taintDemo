@@ -6,7 +6,7 @@ public class MethodModify {
     String new_desc;
     for (Type argumentType : Type.getArgumentTypes(desc)) {
       if (argumentType.toString().length() == 1){
-        new_args.append("I");
+
       }
       new_args.append(argumentType.toString());
     }
